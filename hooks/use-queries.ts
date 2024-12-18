@@ -1,8 +1,9 @@
 "use client";
 import { contract } from "@/lib/constants";
-import { prepareContractCall, readContract } from "thirdweb";
+import { prepareContractCall, PreparedTransaction, PrepareTransactionOptions, readContract } from "thirdweb";
 import { useSendTransaction } from "thirdweb/react";
 import { toast } from "../components/ui/use-toast";
+import { AbiFunction } from 'abitype'
 
 const useQueries = () => {
     const { mutate: sendTransaction, data, isError: isQueryError, isSuccess: isQuerySuccess } = useSendTransaction();
@@ -24,8 +25,8 @@ const useQueries = () => {
                 socialLinks,
                 visibility,
             ],
-        });
-        sendTransaction(transaction);
+        } as never);
+        sendTransaction(transaction as PreparedTransaction<[], AbiFunction, PrepareTransactionOptions>);
         return {receipt: data}
     };
 
@@ -55,8 +56,8 @@ const useQueries = () => {
                 socialLinks,
                 visibility,
             ],
-        });
-        sendTransaction(transaction);
+        }as never);
+        sendTransaction(transaction as PreparedTransaction<[], AbiFunction, PrepareTransactionOptions>);
         return {receipt: data}
     };
 
