@@ -91,12 +91,12 @@ const HeroSection = () => {
 
             <p className=" text-2xl pt-4 text-center w-2/3 mx-auto">
                 Create Once, Identify Everywhere with{" "}
-                <span className="text-sky-500 font-bold">YouDentifi</span>
+                <span className="text-brand font-bold">YouDentifi</span>
             </p>
 
             <div className="flex gap-4 pt-6 items-center justify-center">
                 <Link href="/">
-                    <Button className="py-1 ">
+                    <Button className="py-1 bg-brand hover:bg-brand/20 hover:text-black">
                         <div className="flex items-center justify-center">
                             <div className="text-lg">Create Identity</div>
                             <div>

@@ -5,7 +5,7 @@ const Logo = () => {
         <>
             <Link href={"/"}>
                 <span className="ml-3 mr-2 text-xl font-bold">
-                    YouDenti<span className="text-sky-600">Fi </span>
+                    YouDenti<span className="text-brand">Fi </span>
                 </span>
             </Link>
         </>
