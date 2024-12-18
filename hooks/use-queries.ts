@@ -129,6 +129,7 @@ const useQueries = () => {
                 variant: "destructive",
             });
             console.log(error);
+            return "User does not exist.";
         }
     };
 
