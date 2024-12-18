@@ -48,7 +48,7 @@ type ReturnDataType = {
         education: string;
         workHistory: string;
         info: string;
-        skills: string[];
+        skills: readonly string[];
         imageUrl: string;
     },
     socialLinks: {
