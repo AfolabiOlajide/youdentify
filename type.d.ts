@@ -35,8 +35,8 @@ type VisibilityType = {
 
 type ReturnDataType = {
     basicInfo: {
-        firstname: string;
-        lastname: string;
+        firstName: string;
+        lastName: string;
         username: string;
         email: string;
         homeAddress: string;

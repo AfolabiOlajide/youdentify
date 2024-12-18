@@ -2,10 +2,10 @@
 import { contract } from "@/lib/constants";
 import { prepareContractCall, readContract } from "thirdweb";
 import { useSendTransaction } from "thirdweb/react";
-import { toast } from "./use-toast";
+import { toast } from "../components/ui/use-toast";
 
 const useQueries = () => {
-    const { mutate: sendTransaction } = useSendTransaction();
+    const { mutate: sendTransaction, data, isError: isQueryError, isSuccess: isQuerySuccess } = useSendTransaction();
 
     const createUser = (
         username: string,
@@ -26,6 +26,7 @@ const useQueries = () => {
             ],
         });
         sendTransaction(transaction);
+        return {receipt: data}
     };
 
     const deleteUser = (username: string) => {
@@ -56,6 +57,7 @@ const useQueries = () => {
             ],
         });
         sendTransaction(transaction);
+        return {receipt: data}
     };
 
     const setVisibility = (
@@ -90,8 +92,8 @@ const useQueries = () => {
             });
             const formattedData: ReturnDataType = {
                 basicInfo: {
-                    firstname: data[0].firstName,
-                    lastname: data[0].lastName,
+                    firstName: data[0].firstName,
+                    lastName: data[0].lastName,
                     username: data[0].username,
                     email: data[0].email,
                     homeAddress: data[0].homeAddress,
@@ -142,8 +144,8 @@ const useQueries = () => {
             });
             const formattedData: ReturnDataType = {
                 basicInfo: {
-                    firstname: data[0].firstName,
-                    lastname: data[0].lastName,
+                    firstName: data[0].firstName,
+                    lastName: data[0].lastName,
                     username: data[0].username,
                     email: data[0].email,
                     homeAddress: data[0].homeAddress,
@@ -211,6 +213,8 @@ const useQueries = () => {
         getUsernameByAddress,
         getUserByUsername,
         getUserByAddress,
+        isQueryError,
+        isQuerySuccess
     };
 };
 
