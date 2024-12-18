@@ -79,4 +79,8 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .cont{
+    @apply w-[90%] md:w-[80%] lg:w-[70%] mx-auto
+  }
 }
